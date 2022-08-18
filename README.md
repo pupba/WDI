@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# 2022 여름방학 dApp 프로젝트 🙉
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🐰프로젝트명 : WDI?(Who Did It?)
 
-## Available Scripts
+### 🐱팀원 : 정광원(팀장)
 
-In the project directory, you can run:
+-   1.  Introduction
 
-### `npm start`
+            -개요-
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        WDI는 BlockChain 기술을 활용한 기업 데이터 관리 시스템 입니다. 기존의 대부분의 회사 데이터 관리는 누가 언제 수정하고 삭제하였는지 확인이 불가능하여 만약 사원이 나쁜 마음을 먹고 일부러 삭제하고 알리지 않으면 책임의 소지가 불분명하여 어려움이 있었습니다. 하지만 WDI 시스템을 사용하면 이러한 문제를 해결할 수 있습니다. -기능-
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    -   회사 부서별로 체인을 만들어서 “누가,부서, 언제, 파일 이름, 파일 경로, 서명한 지갑 주소”가 들어있는 블록을 관리하는 체계입니다.
+    -   개인 블록체인 지갑을 연결하여 서비스를 이용할 수 있습니다.
+        -   **개인 블록체인 지갑은 관리자(WDI 서비스 이용 기업 직원 중 선택)가 제공**
+    -   블록 안의 데이터 확인은 인증된 사용자만 열람할 수 있고 수정이 불가능 합니다.
+        -   주소 기반 인증 시스템(Smart Contract를 활용)을 통해 누가 데이터를 수정 했는지 서명을 받아 관리 할 수 있습니다.
+    -   개인 스마트폰 또는 데스크탑에서 서비스를 버튼 클릭만으로 쉽게 이용할 수 있습니다.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   2. Project Plan
+       [https://github.com/pupba/WDI/WDI\_기획서.pdf](https://github.com/pupba/WDI/WDI_기획서.pdf)
+-   3. Smart Contract URL
+       👉 Git : [https://github.com/pupba/WDI/Smart Contract/WDI.sol](https://github.com/pupba/WDI/Smart_Contract/WDI.sol)
+       👉 Contract Address :
+-   4. Home Page URL
+       👉 [https://whodidit1.netlify.app/](https://whodidit1.netlify.app/)
+-   5. GitHub Link
+       [🙏](https://www.notion.so/8b834111c8ac4b199e6df221c84e4fb1)**[Click Me!!](https://github.com/pupba/WDI)**
