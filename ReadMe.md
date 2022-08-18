@@ -1,3 +1,5 @@
+![little_Cat](https://user-images.githubusercontent.com/53106728/185426895-6f41c104-5090-433f-8742-f8fdace97469.png)
+
 # 2022 여름방학 dApp 프로젝트 🙉
 
 ## 🐰프로젝트명 : WDI?(Who Did It?)
