@@ -1,0 +1,94 @@
+html{
+    resize: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+header{
+    height: 20%;
+    width: 100%;
+    margin:auto;
+    text-align: center;
+}
+#logo{
+    margin-top: 1em;
+    width: 25em;
+}
+#nav-bar{
+    margin: auto;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: auto;
+}
+.list-inline1 {
+    display: block;
+    border-style: groove;
+    border-color: black;
+    border-radius: 7px;
+    height: 100%;
+}
+.list-inline1 li{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+#name{
+    color : blue;
+}
+#login,#mkw ,#help, #my-sign{
+    width: 20em;
+    margin: 0;
+    cursor: pointer;
+    margin-right: 2em;
+}
+#hello{
+    width: 20em;
+    margin: 0;
+    margin-right: 2em;
+}
+footer{
+    margin: auto;
+    margin-top: 5em;
+    height: 160px; /* footer의 높이 */
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.container-footer{
+    
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-style: groove;
+    border-width: 5px;
+    padding: 1em;
+    border-radius: 7px;
+    margin-bottom: 0;
+}
+.list-inline1,.list-inline2{
+    list-style-type: none;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0;
+}
+.list-inline2 li{
+    display: inline-block;
+    border-radius: 8px;
+    margin-right: 2em;
+}
+.list-inline2 li:hover{
+    background-color: rgba(212, 150, 245, 0.794);
+}
+.copyright{
+    margin: 0;
+}
+Link{
+    cursor: pointer;
+}

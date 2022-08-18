@@ -1,0 +1,118 @@
+html{
+    resize: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+}
+#head-container{
+    height: 20%;
+    width: 100%;
+}
+#logo{
+    margin-top: 1em;
+    width: 25em;
+}
+#nav-bar{
+    margin: auto;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 10%;
+}
+.list-inline1{
+    margin: auto;
+    text-align: center;
+    padding: 0;
+}
+.list-inline1 li{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    display: inline-block;
+}
+#name{
+    color : blue;
+}
+#logout,#logout_c,#logout_s, #my-sign, #search{
+    width: 7em;
+    margin: 0;
+    cursor: pointer;
+}
+#container{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 60%;
+}
+table{
+    border-style: solid;
+    border-radius: 8px;
+    margin: auto;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+img{
+    margin: 0;
+}
+label{
+    margin: 0;
+    display: inline-block;
+}
+#table_input,.target_file{
+    margin: 0.5em;
+    width: 65%;
+}
+#submit_id{
+    cursor: pointer;
+}
+#ad-bar{
+    display: inline;
+    height: 1em;
+}
+
+footer{
+    margin: auto;
+    margin-top: 5em;
+    height: 160px; /* footer의 높이 */
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    
+}
+.container-footer{
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-style: groove;
+    border-width: 5px;
+    padding: 1em;
+    border-radius: 7px;
+    margin-bottom: 0;
+}
+.list-inline1,.list-inline2{
+    list-style-type: none;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0;
+}
+.list-inline2 li{
+    display: inline-block;
+    border-radius: 8px;
+    margin-right: 2em;
+}
+.list-inline2 li:hover{
+    background-color: rgba(212, 150, 245, 0.794);
+}
+.copyright{
+    margin: 0;
+}
+Link{
+    display :none;
+    cursor: pointer;
+}

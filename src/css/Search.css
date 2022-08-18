@@ -1,0 +1,131 @@
+html{
+    resize: none;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+}
+#head-container{
+    height: 20%;
+    width: 100%;
+}
+#logo{
+    margin-top: 1em;
+    width: 25em;
+}
+.list-inline1{
+    margin: auto;
+    text-align: center;
+    padding: 0;
+}
+.list-inline1 li{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    display: inline-block;
+}
+#logout,#logout_c, #my-sign{
+    width: 7em;
+    margin: 0;
+    cursor: pointer;
+}
+table{
+    margin: auto;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-style: groove;
+    table-layout: auto;
+    word-break:break-all;
+	height:auto;
+}
+img{
+    margin: 0;
+}
+label{
+    margin: 0;
+    display: inline-block;
+}
+#container{
+    width: 100%;
+    height: auto;
+}
+#kind{
+    width: 15em;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+#s_con{
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(128, 128, 128, 0.365);
+    border-radius: 8px;
+    display: inline-block;
+    width: 50%;
+}
+#search_about{
+    width: auto;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0);
+    overflow: visible;
+    -ms-user-select: none;
+    -moz-user-select: -moz-non;
+    -khtml-user-select: -moz-none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#search_about:focus{
+    outline: none;
+}
+#submit_btn{
+    width: 16px;
+    cursor: pointer;
+}
+footer{
+    margin: auto;
+    margin-top: 5em;
+    height: 160px; /* footer의 높이 */
+    position: relative;  
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    
+}
+.container-footer{
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-style: groove;
+    border-width: 5px;
+    padding: 1em;
+    border-radius: 7px;
+    margin-bottom: 0;
+}
+.list-inline1,.list-inline2{
+    list-style-type: none;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 0;
+}
+.list-inline2 li{
+    display: inline-block;
+    border-radius: 8px;
+    margin-right: 2em;
+}
+.list-inline2 li:hover{
+    background-color: rgba(212, 150, 245, 0.794);
+}
+.copyright{
+    margin: 0;
+}
+Link{
+    display :none;
+    cursor: pointer;
+}
