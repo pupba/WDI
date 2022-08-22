@@ -17,14 +17,23 @@ import { isNoEthereumObject } from "../lib/errors";
 //
 
 function App() {
-    const { activate } = useWeb3React();
-    const handdleConnect = (event) => {
-        activate(injected, (error) => {
-            if (isNoEthereumObject(error)) {
-                window.open("https://metamask.io/download.html");
-            }
-            event.preventDefault(); // Link 비활성화
-        });
+    const { active, activate } = useWeb3React();
+    const connect = (event) => {
+        //event.preventDefault(); // Link 비활성화
+        if (!active) {
+            event.preventDefault();
+            activate(injected, (error) => {
+                if (isNoEthereumObject(error)) {
+                    window.open("https://metamask.io/download.html");
+                }
+            });
+        } else {
+            activate(injected, (error) => {
+                if (isNoEthereumObject(error)) {
+                    window.open("https://metamask.io/download.html");
+                }
+            });
+        }
     };
     return (
         <div className="App">
@@ -40,7 +49,7 @@ function App() {
                         <Link
                             // style={{ display: `none` }}
                             to="/signed"
-                            onClick={handdleConnect}
+                            onClick={connect}
                         >
                             <img id="login" src={login} alt="login"></img>
                         </Link>
