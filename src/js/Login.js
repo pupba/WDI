@@ -9,7 +9,23 @@ import facebook from "../image/facebook.svg";
 import tel from "../image/tel.svg";
 import email from "../image/email.svg";
 import { Link } from "react-router-dom";
+
+// Web3-react
+import { useWeb3React } from "@web3-react/core";
+import { injected } from "../lib/connectors";
+import { isNoEthereumObject } from "../lib/errors";
+//
+
 function App() {
+    const { activate } = useWeb3React();
+    const handdleConnect = (event) => {
+        activate(injected, (error) => {
+            if (isNoEthereumObject(error)) {
+                window.open("https://metamask.io/download.html");
+            }
+            event.preventDefault(); // Link 비활성화
+        });
+    };
     return (
         <div className="App">
             <header id="head-container">
@@ -24,6 +40,7 @@ function App() {
                         <Link
                             // style={{ display: `none` }}
                             to="/signed"
+                            onClick={handdleConnect}
                         >
                             <img id="login" src={login} alt="login"></img>
                         </Link>

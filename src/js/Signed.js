@@ -13,7 +13,14 @@ import tel from "../image/tel.svg";
 import email from "../image/email.svg";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+// Web3-react
+import { useWeb3React } from "@web3-react/core";
+import { CONTRACT_ADDRESS, ABI } from "../lib/config";
+//
 function Signed() {
+    // Web3-react
+    const { account, active, deactivate } = useWeb3React();
+    //
     const [disabled, setDisable] = useState(true);
     let date = new Date();
     let now = date.toLocaleString();
@@ -66,6 +73,7 @@ function Signed() {
         var s = `Block!\nname : ${block_.name}\ndepart : ${block_.depart}\ntime : ${block_.time}\nfname : ${block_.fname}\npath : ${block_.path}`;
         alert(s);
         alert("서명완료!!");
+
         window.location.reload();
     };
     return (
@@ -76,7 +84,7 @@ function Signed() {
             <nav id="navi-bar">
                 <ul className="list-inline1">
                     <li>
-                        <p>반갑습니다!</p>
+                        <p>{`접속한 지갑 주소 --> ${account}`}</p>
                     </li>
                     <br />
                     <li>
@@ -90,7 +98,16 @@ function Signed() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/">
+                        <Link
+                            to="/"
+                            onClick={() => {
+                                if (active) {
+                                    deactivate();
+                                    alert("로그아웃!!");
+                                    return;
+                                }
+                            }}
+                        >
                             <img id="logout" src={logout} alt="logout"></img>
                         </Link>
                     </li>
