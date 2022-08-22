@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 // Web3-react
 import { useWeb3React } from "@web3-react/core";
-import { CONTRACT_ADDRESS, ABI } from "../lib/config";
+//import { CONTRACT_ADDRESS, ABI } from "../lib/config";
 //
 function Signed() {
     // Web3-react
