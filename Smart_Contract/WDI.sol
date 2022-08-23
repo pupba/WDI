@@ -79,7 +79,7 @@ contract WDI is Ownable{
     // 자동으로 숫자 증가
     uint no_cur = 0;
     
-    function makeBlock(string memory name,string memory date,string memory depart,string memory fname, string memory fpath) public {
+    function makeBlock(string memory name,string memory date,string memory depart,string memory fname, string memory fpath)  public {
         SignBlock memory tmp;
         tmp.no = no_cur++; // 추가하고 +1
         tmp.name=name;
@@ -126,6 +126,16 @@ contract WDI is Ownable{
         uint cnt=0;
         for(uint i=0;i<sb.length;i++){
             if(keccak256(abi.encodePacked(sb[i].fileName)) == keccak256(abi.encodePacked(fname))){
+                tmp[cnt++] = sb[i];
+            }
+        }
+        return tmp;
+    }
+    function getBlock_addr(address _addr) public view returns(SignBlock[] memory ){
+        SignBlock[] memory tmp = new SignBlock[](sb.length);
+        uint cnt=0;
+        for(uint i=0;i<sb.length;i++){
+            if(keccak256(abi.encodePacked(sb[i].writerAddr)) == keccak256(abi.encodePacked(_addr))){
                 tmp[cnt++] = sb[i];
             }
         }
