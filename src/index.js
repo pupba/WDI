@@ -15,14 +15,14 @@ const getLibrary = (provider) => {
 //
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-        <Web3ReactProvider getLibrary={getLibrary}>
+    <Web3ReactProvider getLibrary={getLibrary}>
+        <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<Login />} />
                 <Route path="/signed" element={<Signed />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/mysigns" element={<MySign />} />
             </Routes>
-        </Web3ReactProvider>
-    </BrowserRouter>
+        </BrowserRouter>
+    </Web3ReactProvider>
 );

@@ -1,51 +1,11 @@
-export const CONTRACT_ADDRESS = "0x0328B84759D148eAcc0912D5Da049E008C4fC7B8";
+import Web3 from "web3";
+export const web3 = new Web3(
+    new Web3.providers.WebsocketProvider(
+        "wss://ropsten.infura.io/ws/v3/c1df0953ad0a489fb24ab898d60a57c8"
+    )
+);
+export const CONTRACT_ADDRESS = "0xa8aa254fb5bB9DEd6de3e767b9A9Aa962bD98185";
 export const ABI = [
-    {
-        inputs: [
-            {
-                internalType: "address",
-                name: "wallet",
-                type: "address",
-            },
-        ],
-        name: "addAuthArray",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
-    },
-    {
-        inputs: [
-            {
-                internalType: "string",
-                name: "name",
-                type: "string",
-            },
-            {
-                internalType: "string",
-                name: "date",
-                type: "string",
-            },
-            {
-                internalType: "string",
-                name: "depart",
-                type: "string",
-            },
-            {
-                internalType: "string",
-                name: "fname",
-                type: "string",
-            },
-            {
-                internalType: "string",
-                name: "fpath",
-                type: "string",
-            },
-        ],
-        name: "makeBlock",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
-    },
     {
         anonymous: false,
         inputs: [
@@ -69,31 +29,11 @@ export const ABI = [
         inputs: [
             {
                 internalType: "address",
-                name: "_ad",
+                name: "wallet",
                 type: "address",
             },
         ],
-        name: "remove",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
-    },
-    {
-        inputs: [],
-        name: "renounceOwnership",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function",
-    },
-    {
-        inputs: [
-            {
-                internalType: "address",
-                name: "newOwner",
-                type: "address",
-            },
-        ],
-        name: "transferOwnership",
+        name: "addAuthArray",
         outputs: [],
         stateMutability: "nonpayable",
         type: "function",
@@ -106,6 +46,62 @@ export const ABI = [
                 internalType: "bool",
                 name: "check",
                 type: "bool",
+            },
+        ],
+        stateMutability: "view",
+        type: "function",
+    },
+    {
+        inputs: [
+            {
+                internalType: "address",
+                name: "_addr",
+                type: "address",
+            },
+        ],
+        name: "getBlock_addr",
+        outputs: [
+            {
+                components: [
+                    {
+                        internalType: "uint256",
+                        name: "no",
+                        type: "uint256",
+                    },
+                    {
+                        internalType: "string",
+                        name: "name",
+                        type: "string",
+                    },
+                    {
+                        internalType: "string",
+                        name: "date",
+                        type: "string",
+                    },
+                    {
+                        internalType: "string",
+                        name: "depart",
+                        type: "string",
+                    },
+                    {
+                        internalType: "string",
+                        name: "fileName",
+                        type: "string",
+                    },
+                    {
+                        internalType: "string",
+                        name: "filePath",
+                        type: "string",
+                    },
+                    {
+                        internalType: "address",
+                        name: "writerAddr",
+                        type: "address",
+                    },
+                ],
+                internalType: "struct WDI.SignBlock[]",
+                name: "",
+                type: "tuple[]",
             },
         ],
         stateMutability: "view",
@@ -374,6 +370,39 @@ export const ABI = [
         type: "function",
     },
     {
+        inputs: [
+            {
+                internalType: "string",
+                name: "name",
+                type: "string",
+            },
+            {
+                internalType: "string",
+                name: "date",
+                type: "string",
+            },
+            {
+                internalType: "string",
+                name: "depart",
+                type: "string",
+            },
+            {
+                internalType: "string",
+                name: "fname",
+                type: "string",
+            },
+            {
+                internalType: "string",
+                name: "fpath",
+                type: "string",
+            },
+        ],
+        name: "makeBlock",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+    },
+    {
         inputs: [],
         name: "owner",
         outputs: [
@@ -386,4 +415,38 @@ export const ABI = [
         stateMutability: "view",
         type: "function",
     },
+    {
+        inputs: [
+            {
+                internalType: "address",
+                name: "_ad",
+                type: "address",
+            },
+        ],
+        name: "remove",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+    },
+    {
+        inputs: [],
+        name: "renounceOwnership",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+    },
+    {
+        inputs: [
+            {
+                internalType: "address",
+                name: "newOwner",
+                type: "address",
+            },
+        ],
+        name: "transferOwnership",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+    },
 ];
+export const Mycontract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);

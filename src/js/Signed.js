@@ -15,11 +15,12 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 // Web3-react
 import { useWeb3React } from "@web3-react/core";
-//import { CONTRACT_ADDRESS, ABI } from "../lib/config";
+import { Mycontract } from "../lib/mycontract";
 //
 function Signed() {
     // Web3-react
     const { account, active, deactivate } = useWeb3React();
+    // 금액 결재 가능한 지갑 생성
     //
     const [disabled, setDisable] = useState(true);
     let date = new Date();
@@ -55,7 +56,10 @@ function Signed() {
             container.path === ""
         ) {
             alert("입력을 모두 입력해주세요!!");
-            window.location.reload();
+            document.getElementsByClassName("usr")[0].value = "";
+            document.getElementsByClassName("dp")[0].value = "생산";
+            document.getElementsByClassName("target_file")[0].value = "";
+            document.getElementsByClassName("filepath")[0].value = "";
         } else {
             setDisable(false);
             changeBtn();
@@ -72,9 +76,21 @@ function Signed() {
         // block_ 값을 전달.
         var s = `Block!\nname : ${block_.name}\ndepart : ${block_.depart}\ntime : ${block_.time}\nfname : ${block_.fname}\npath : ${block_.path}`;
         alert(s);
-        alert("서명완료!!");
+        document.getElementsByClassName("usr")[0].value = "";
+        document.getElementsByClassName("dp")[0].value = "생산";
+        document.getElementsByClassName("target_file")[0].value = "";
+        document.getElementsByClassName("filepath")[0].value = "";
+        Mycontract.methods
+            .makeBlock(
+                block_.name,
+                String(block_.time),
+                block_.depart,
+                block_.fname,
+                block_.path
+            )
+            .send({ from: account });
 
-        window.location.reload();
+        alert("서명완료!!");
     };
     return (
         <div className="App">

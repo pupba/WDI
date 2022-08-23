@@ -15,33 +15,36 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+// Web3
+import { Mycontract } from "../lib/mycontract";
+//
+var rows = [];
 function Search() {
-    const createData = (name, depart, time, filepath, block_addr) => {
-        return { name, depart, time, filepath, block_addr };
+    const findBlock = (kind, value) => {
+        // if (kind === "name") Mycontract.methods.getBlock_name(value).call();
+        // else if (kind === "depart")
+        //     Mycontract.methods.getBlock_date(value).call();
+        // else if (kind === "date")
+        //     Mycontract.methods.getBlock_depart(value).call();
+        // else if (kind === "filename")
+        //     Mycontract.methods.getBlock_fname(value).call();
+        var result = Mycontract.methods.getBlock_name(value).call();
+        result.then((appData) => {
+            rows = [];
+            const key = [...Array(appData.length - 1).keys()];
+            // let arr = [];
+            return key.forEach((e) =>
+                rows.push({
+                    no: appData[e]["no"],
+                    name: appData[e]["name"],
+                    depart: appData[e]["depart"],
+                    time: appData[e]["date"],
+                    filepath: appData[e]["filePath"],
+                    block_addr: appData[e]["writerAddr"],
+                })
+            );
+        });
     };
-    var rows = [
-        createData(
-            "정광원",
-            "개발",
-            "2022. 8.6. 오후 5:14:28",
-            "C:\fakepathcat2.png",
-            "https://ipfs.io/ipfs/QmXkxpwAHCtDXbbZHUwqtFucG1RMS6T87vi1CdvadfL7qA"
-        ),
-        createData(
-            "정광원",
-            "개발",
-            "2022. 8.6. 오후 5:14:28",
-            "C:\fakepathcat2.png",
-            "https://ipfs.io/ipfs/QmXkxpwAHCtDXbbZHUwqtFucG1RMS6T87vi1CdvadfL7qA"
-        ),
-        createData(
-            "정광원",
-            "개발",
-            "2022. 8.6. 오후 5:14:28",
-            "C:\fakepathcat2.png",
-            "https://ipfs.io/ipfs/QmXkxpwAHCtDXbbZHUwqtFucG1RMS6T87vi1CdvadfL7qA"
-        ),
-    ];
     return (
         <div className="App">
             <header id="head-container">
@@ -73,13 +76,16 @@ function Search() {
                             type="button"
                             onClick={() => {
                                 // 찾기
-                                const condi = {
-                                    kind: document.getElementById("kind").value,
-                                    search_value:
-                                        document.getElementById("search_about")
-                                            .value,
-                                };
-                                console.log(condi);
+                                const search_kind =
+                                    document.getElementById("kind").value;
+                                const search_value =
+                                    document.getElementById(
+                                        "search_about"
+                                    ).value;
+                                findBlock(
+                                    String(search_kind),
+                                    String(search_value)
+                                );
                             }}
                         />
                     </div>
@@ -92,7 +98,8 @@ function Search() {
                     >
                         <TableHead>
                             <TableRow>
-                                <TableCell>이름</TableCell>
+                                <TableCell>No</TableCell>
+                                <TableCell align="center">이름</TableCell>
                                 <TableCell align="center">부서</TableCell>
                                 <TableCell align="center">수정 날짜</TableCell>
                                 <TableCell align="center">파일 위치</TableCell>
@@ -102,7 +109,7 @@ function Search() {
                         <TableBody>
                             {rows.map((row) => (
                                 <TableRow
-                                    key={row.name}
+                                    key={row.no}
                                     sx={{
                                         "&:last-child td, &:last-child th": {
                                             border: 0,
@@ -110,6 +117,9 @@ function Search() {
                                     }}
                                 >
                                     <TableCell component="th" scope="row">
+                                        {row.no}
+                                    </TableCell>
+                                    <TableCell align="center">
                                         {row.name}
                                     </TableCell>
                                     <TableCell align="center">

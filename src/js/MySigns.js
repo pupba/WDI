@@ -15,33 +15,26 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+import { Mycontract } from "../lib/mycontract";
+import { useWeb3React } from "@web3-react/core";
+var rows = [];
 function MySigns() {
-    const createData = (name, depart, time, filepath, block_addr) => {
-        return { name, depart, time, filepath, block_addr };
-    };
-    var rows = [
-        createData(
-            "정광원",
-            "개발",
-            "2022. 8.6. 오후 5:14:28",
-            "C:\fakepathcat2.png",
-            "https://ipfs.io/ipfs/QmXkxpwAHCtDXbbZHUwqtFucG1RMS6T87vi1CdvadfL7qA"
-        ),
-        createData(
-            "정광원",
-            "개발",
-            "2022. 8.6. 오후 5:14:28",
-            "C:\fakepathcat2.png",
-            "https://ipfs.io/ipfs/QmXkxpwAHCtDXbbZHUwqtFucG1RMS6T87vi1CdvadfL7qA"
-        ),
-        createData(
-            "정광원",
-            "개발",
-            "2022. 8.6. 오후 5:14:28",
-            "C:\fakepathcat2.png",
-            "https://ipfs.io/ipfs/QmXkxpwAHCtDXbbZHUwqtFucG1RMS6T87vi1CdvadfL7qA"
-        ),
-    ];
+    const { account } = useWeb3React();
+    var result = Mycontract.methods.getBlock_addr(account).call();
+    result.then((appData) => {
+        rows = [];
+        const key = [...Array(appData.length - 1).keys()];
+        return key.forEach((e) =>
+            rows.push({
+                no: appData[e]["no"],
+                name: appData[e]["name"],
+                depart: appData[e]["depart"],
+                time: appData[e]["date"],
+                filepath: appData[e]["filePath"],
+                block_addr: appData[e]["writerAddr"],
+            })
+        );
+    });
     return (
         <div className="App">
             <header id="head-container">
@@ -59,7 +52,8 @@ function MySigns() {
                     >
                         <TableHead>
                             <TableRow>
-                                <TableCell>이름</TableCell>
+                                <TableCell>No</TableCell>
+                                <TableCell align="center">이름</TableCell>
                                 <TableCell align="center">부서</TableCell>
                                 <TableCell align="center">수정 날짜</TableCell>
                                 <TableCell align="center">파일 위치</TableCell>
@@ -69,7 +63,7 @@ function MySigns() {
                         <TableBody>
                             {rows.map((row) => (
                                 <TableRow
-                                    key={row.name}
+                                    key={row.no}
                                     sx={{
                                         "&:last-child td, &:last-child th": {
                                             border: 0,
@@ -77,6 +71,9 @@ function MySigns() {
                                     }}
                                 >
                                     <TableCell component="th" scope="row">
+                                        {row.no}
+                                    </TableCell>
+                                    <TableCell align="center">
                                         {row.name}
                                     </TableCell>
                                     <TableCell align="center">

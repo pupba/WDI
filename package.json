@@ -12,11 +12,22 @@
     "@testing-library/user-event": "^13.5.0",
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
+    "assert": "^2.0.0",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "crypto-js": "^3.1.9-1",
+    "eth-lib": "^0.1.29",
+    "os-browserify": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "^4.0.3",
+    "stream": "0.0.2",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "web-vitals": "^2.1.4",
+    "web3": "^1.7.5",
+    "web3-eth-accounts": "^1.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +55,8 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
+  },
+  "browser": {
+    "crypto": false
   }
 }
