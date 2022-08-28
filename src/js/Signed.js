@@ -82,13 +82,13 @@ function Signed() {
         document.getElementsByClassName("filepath")[0].value = "";
         Mycontract.methods
             .makeBlock(
-                block_.name,
+                String(block_.name),
                 String(block_.time),
-                block_.depart,
-                block_.fname,
-                block_.path
+                String(block_.depart),
+                String(block_.fname),
+                String(block_.path)
             )
-            .send({ from: account });
+            .send({ from: account, gas: 300000 });
 
         alert("서명완료!!");
     };

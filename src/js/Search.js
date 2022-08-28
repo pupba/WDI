@@ -21,29 +21,53 @@ import { Mycontract } from "../lib/mycontract";
 var rows = [];
 function Search() {
     const findBlock = (kind, value) => {
-        // if (kind === "name") Mycontract.methods.getBlock_name(value).call();
-        // else if (kind === "depart")
-        //     Mycontract.methods.getBlock_date(value).call();
-        // else if (kind === "date")
-        //     Mycontract.methods.getBlock_depart(value).call();
-        // else if (kind === "filename")
-        //     Mycontract.methods.getBlock_fname(value).call();
-        var result = Mycontract.methods.getBlock_name(value).call();
-        result.then((appData) => {
-            rows = [];
-            const key = [...Array(appData.length - 1).keys()];
-            // let arr = [];
-            return key.forEach((e) =>
+        rows = [];
+        let result = null;
+        if (kind === "name") {
+            result = Mycontract.methods.getBlock_name(value).call();
+        } else if (kind === "depart") {
+            result = Mycontract.methods.getBlock_date(value).call();
+        } else if (kind === "date") {
+            result = Mycontract.methods.getBlock_depart(value).call();
+        } else if (kind === "filename") {
+            result = Mycontract.methods.getBlock_fname(value).call();
+        }
+        result.then((appdata) => {
+            let keys = [];
+            for (let i = 0; i < appdata.length; i++) {
+                if (
+                    appdata[i]["writerAddr"] !==
+                    "0x0000000000000000000000000000000000000000"
+                ) {
+                    keys.push(i);
+                }
+            }
+            keys.forEach((e) =>
                 rows.push({
-                    no: appData[e]["no"],
-                    name: appData[e]["name"],
-                    depart: appData[e]["depart"],
-                    time: appData[e]["date"],
-                    filepath: appData[e]["filePath"],
-                    block_addr: appData[e]["writerAddr"],
+                    no: appdata[e]["no"],
+                    name: appdata[e]["name"],
+                    depart: appdata[e]["depart"],
+                    time: appdata[e]["date"],
+                    filepath: appdata[e]["filePath"],
+                    block_addr: appdata[e]["writerAddr"],
                 })
             );
         });
+        // result.then((appData) => {
+        //     rows = [];
+        //     const key = [...Array(appData.length - 1).keys()];
+        //     // let arr = [];
+        //     return key.forEach((e) =>
+        //         rows.push({
+        //             no: appData[e]["no"],
+        //             name: appData[e]["name"],
+        //             depart: appData[e]["depart"],
+        //             time: appData[e]["date"],
+        //             filepath: appData[e]["filePath"],
+        //             block_addr: appData[e]["writerAddr"],
+        //         })
+        //     );
+        // });
     };
     return (
         <div className="App">
