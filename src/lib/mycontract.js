@@ -1,7 +1,7 @@
 import Web3 from "web3";
 export const web3 = new Web3(
     new Web3.providers.WebsocketProvider(
-        "wss://ropsten.infura.io/ws/v3/c1df0953ad0a489fb24ab898d60a57c8"
+        "wss://ropsten.infura.io/ws/v3/068c8d5618704eeab1c8d5d6c920b8a2"
     )
 );
 export const CONTRACT_ADDRESS = "0xa8aa254fb5bB9DEd6de3e767b9A9Aa962bD98185";
