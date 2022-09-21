@@ -29,7 +29,7 @@ function Search() {
             result = Mycontract.methods.getBlock_date(value).call();
         } else if (kind === "date") {
             result = Mycontract.methods.getBlock_depart(value).call();
-        } else if (kind === "filename") {
+        } else if (kind === "fname") {
             result = Mycontract.methods.getBlock_fname(value).call();
         }
         result.then((appdata) => {
@@ -48,26 +48,12 @@ function Search() {
                     name: appdata[e]["name"],
                     depart: appdata[e]["depart"],
                     time: appdata[e]["date"],
+                    filename: appdata[e]["fileName"],
                     filepath: appdata[e]["filePath"],
                     block_addr: appdata[e]["writerAddr"],
                 })
             );
         });
-        // result.then((appData) => {
-        //     rows = [];
-        //     const key = [...Array(appData.length - 1).keys()];
-        //     // let arr = [];
-        //     return key.forEach((e) =>
-        //         rows.push({
-        //             no: appData[e]["no"],
-        //             name: appData[e]["name"],
-        //             depart: appData[e]["depart"],
-        //             time: appData[e]["date"],
-        //             filepath: appData[e]["filePath"],
-        //             block_addr: appData[e]["writerAddr"],
-        //         })
-        //     );
-        // });
     };
     return (
         <div className="App">
@@ -83,7 +69,7 @@ function Search() {
                         <option value="name">이름</option>
                         <option value="date">날짜</option>
                         <option value="depart">부서</option>
-                        <option value="filename">파일 이름</option>
+                        <option value="fname">파일 이름</option>
                     </select>
                     <div id="s_con">
                         <input
@@ -126,6 +112,7 @@ function Search() {
                                 <TableCell align="center">이름</TableCell>
                                 <TableCell align="center">부서</TableCell>
                                 <TableCell align="center">수정 날짜</TableCell>
+                                <TableCell align="center">파일 이름</TableCell>
                                 <TableCell align="center">파일 위치</TableCell>
                                 <TableCell align="center">블록 주소</TableCell>
                             </TableRow>
@@ -151,6 +138,9 @@ function Search() {
                                     </TableCell>
                                     <TableCell align="left">
                                         {row.time}
+                                    </TableCell>
+                                    <TableCell align="left">
+                                        {row.filename}
                                     </TableCell>
                                     <TableCell align="left">
                                         {row.filepath}
