@@ -30,6 +30,7 @@ function MySigns() {
                 name: appData[e]["name"],
                 depart: appData[e]["depart"],
                 time: appData[e]["date"],
+                filename: appData[e]["fileName"],
                 filepath: appData[e]["filePath"],
                 block_addr: appData[e]["writerAddr"],
             })
@@ -56,6 +57,7 @@ function MySigns() {
                                 <TableCell align="center">이름</TableCell>
                                 <TableCell align="center">부서</TableCell>
                                 <TableCell align="center">수정 날짜</TableCell>
+                                <TableCell align="center">파일 이름</TableCell>
                                 <TableCell align="center">파일 위치</TableCell>
                                 <TableCell align="center">블록 주소</TableCell>
                             </TableRow>
@@ -81,6 +83,9 @@ function MySigns() {
                                     </TableCell>
                                     <TableCell align="left">
                                         {row.time}
+                                    </TableCell>
+                                    <TableCell align="left">
+                                        {row.filename}
                                     </TableCell>
                                     <TableCell align="left">
                                         {row.filepath}
