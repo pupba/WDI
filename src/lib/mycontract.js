@@ -5,7 +5,7 @@ export const web3 = new Web3(
     )
 );
 // 지갑 등록
-web3.eth.accounts.wallet.add("0x2ea290eE74B80A78928621374bB7599B0733a694");
+web3.eth.accounts.wallet.add("5982cfeafdae69a24051998df779b346505dadf2d09bf82d73cb1f37bb3bd4a7");
 export const CONTRACT_ADDRESS = "0xa8aa254fb5bB9DEd6de3e767b9A9Aa962bD98185";
 export const ABI = [
     {
