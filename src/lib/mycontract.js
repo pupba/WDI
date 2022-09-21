@@ -4,6 +4,8 @@ export const web3 = new Web3(
         "wss://ropsten.infura.io/ws/v3/068c8d5618704eeab1c8d5d6c920b8a2"
     )
 );
+// 지갑 등록
+web3.eth.accounts.wallet.add("0x2ea290eE74B80A78928621374bB7599B0733a694");
 export const CONTRACT_ADDRESS = "0xa8aa254fb5bB9DEd6de3e767b9A9Aa962bD98185";
 export const ABI = [
     {
