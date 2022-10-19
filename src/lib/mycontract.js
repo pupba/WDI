@@ -1,7 +1,7 @@
 import Web3 from "web3";
 export const web3 = new Web3(
     new Web3.providers.WebsocketProvider(
-        "wss://ropsten.infura.io/ws/v3/068c8d5618704eeab1c8d5d6c920b8a2"
+        "wss://sepolia.infura.io/ws/v3/068c8d5618704eeab1c8d5d6c920b8a2"
     )
 );
 // 지갑 등록
