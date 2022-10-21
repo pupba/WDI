@@ -20,6 +20,7 @@ function App() {
     const { active, activate } = useWeb3React();
     const connect = (event) => {
         //event.preventDefault(); // Link 비활성화
+        console.log(active)
         if (!active) {
             event.preventDefault();
             activate(injected, (error) => {
