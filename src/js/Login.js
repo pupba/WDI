@@ -20,7 +20,7 @@ function App() {
     const { active, activate } = useWeb3React();
     const connect = (event) => {
         //event.preventDefault(); // Link 비활성화
-        if (!active) {
+        if (active) {
             event.preventDefault();
             activate(injected, (error) => {
                 if (isNoEthereumObject(error)) {
