@@ -27,16 +27,13 @@ function App() {
                     window.open("https://metamask.io/download.html");
                 }
             });
-            console.log("실패")
         } else {
             activate(injected, (error) => {
                 if (isNoEthereumObject(error)) {
                     window.open("https://metamask.io/download.html");
                 }
             });
-            console.log("성공")
         }
-        console.log(active)
     };
     return (
         <div className="App">
