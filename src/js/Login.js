@@ -20,7 +20,6 @@ function App() {
     const { active, activate } = useWeb3React();
     const connect = (event) => {
         //event.preventDefault(); // Link 비활성화
-        console.log(active)
         if (!active) {
             event.preventDefault();
             activate(injected, (error) => {
@@ -28,13 +27,16 @@ function App() {
                     window.open("https://metamask.io/download.html");
                 }
             });
+            console.log("실패")
         } else {
             activate(injected, (error) => {
                 if (isNoEthereumObject(error)) {
                     window.open("https://metamask.io/download.html");
                 }
             });
+            console.log("성공")
         }
+        console.log(active)
     };
     return (
         <div className="App">
