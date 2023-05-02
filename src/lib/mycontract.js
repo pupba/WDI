@@ -4,8 +4,7 @@ export const web3 = new Web3(
         "wss://sepolia.infura.io/ws/v3/068c8d5618704eeab1c8d5d6c920b8a2"
     )
 );
-// 지갑 등록
-web3.eth.accounts.wallet.add("5982cfeafdae69a24051998df779b346505dadf2d09bf82d73cb1f37bb3bd4a7");
+
 export const CONTRACT_ADDRESS = "0x890119753d7B2cBEde8E17090314028Ce8B9787d";
 export const ABI = [
 	{
