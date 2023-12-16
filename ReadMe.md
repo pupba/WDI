@@ -6,7 +6,6 @@
 
 ### 🐱팀원 : 정광원(팀장)
 
-#### <a href="https://luxuriant-creature-127.notion.site/2022-dApp-770c7a3eabe14ca89555782fb77db244">Notion Link</a>
 
 1. Introduction
 
